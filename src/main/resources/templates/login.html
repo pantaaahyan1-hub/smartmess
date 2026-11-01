@@ -1,0 +1,51 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sign in · Smart Mess</title>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body class="auth">
+    <div class="auth-story"><a class="brand">◈ smart<span>mess</span></a><div><h1>Hostel mess management</h1><p>Meal selections, attendance and prepaid wallets.</p></div></div><main class="auth-card">
+      
+      <h2>Sign in</h2>
+      <p class="muted">Enter your account details.</p>
+      <div th:if="${param.error}" class="alert error">
+        Incorrect credentials or inactive account.
+      </div>
+      <div th:if="${param.registered}" class="alert">
+        Account created. Sign in to get started.
+      </div>
+      <div th:if="${param.expired}" class="alert" role="alert">
+        Your sign-in session expired or changed. This form has been refreshed securely.
+        Please enter your credentials again.
+      </div>
+      <form th:action="@{/login}" method="post">
+        <label
+          >Email address<input
+            name="username"
+            type="email"
+            placeholder="you@university.edu"
+            required
+            autofocus /></label
+        ><label
+          >Password<input
+            name="password"
+            type="password"
+            placeholder="Your password"
+            required /></label
+        ><button class="primary" type="submit">Sign in to Smart Mess →</button>
+      </form>
+      <p>New to campus? <a href="/register">Create an account</a></p>
+      <div class="demo-box">
+        <b>Demo accounts</b>
+        <p>Password for all accounts: <code>SmartMess@123</code></p>
+        <small
+          >Student: student@smartmess.local<br />Admin: admin@smartmess.local<br />Scanner:
+          staff@smartmess.local</small
+        >
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "files.exclude": {
+    "**/target": true,
+    "**/*.class": true,
+    "**/data": true,
+    "**/*.mv.db": true,
+    "**/*.trace.db": true,
+    "**/biometric.key": true,
+    "**/tools": true,
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/.idea": true,
+    "**/.settings": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/*.log": true,
+    "**/*.tmp": true,
+    "**/*.bak": true,
+    "**/__pycache__": true,
+    "**/.DS_Store": true
+  },
+  "java.configuration.updateBuildConfiguration": "automatic"
+}

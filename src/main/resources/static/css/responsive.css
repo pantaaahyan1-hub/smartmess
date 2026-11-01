@@ -1,0 +1,9 @@
+@media (max-width: 740px) {
+  .sidebar nav { display: flex; flex-wrap: wrap; overflow: visible; gap: 4px; }
+  .sidebar nav button { flex: 1 1 110px; white-space: normal; margin: 0; }
+  .meal-grid, .meals-grid, .stats, .two-col, .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .meal-card { max-width: 100%; }
+  .choice button { min-width: 0; flex: 1 1 70px; }
+  .main { min-width: 0; }
+  .header-right { flex-wrap: wrap; }
+}

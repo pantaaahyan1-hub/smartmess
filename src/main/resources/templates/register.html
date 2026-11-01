@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create account · Smart Mess</title>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body class="auth">
+    <div class="auth-story"><a class="brand">◈ smart<span>mess</span></a><div><h1>Hostel mess management</h1><p>Meal selections, attendance and prepaid wallets.</p></div></div><main class="auth-card">
+      <div th:if="${param.expired}" class="alert" role="alert">
+        Your registration session expired or changed. Please submit this refreshed form again.
+      </div>
+      <h2>Join the table.</h2>
+      <p class="muted">Create your hostel student account.</p>
+      <div class="alert error" th:if="${param.error}">
+        Use a unique valid email, a name and a password of 10–72 characters.
+      </div>
+      <form th:action="@{/register}" method="post">
+        <label>Full name<input name="name" required maxlength="80" /></label
+        ><label
+          >Email address<input
+            name="email"
+            type="email"
+            required
+            maxlength="150" /></label
+        ><label
+          >Password<input
+            name="password"
+            type="password"
+            required
+            minlength="10"
+            maxlength="72" /></label
+        ><button class="primary">Create student account →</button>
+      </form>
+      <p>Already registered? <a href="/login">Sign in</a></p>
+      <small
+        >New accounts start with ₹0. Ask the demo administrator to credit your
+        internal wallet. Face enrollment is optional and requires your
+        consent.</small
+      >
+    </main>
+  </body>
+</html>
